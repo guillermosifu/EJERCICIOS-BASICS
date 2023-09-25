@@ -1,0 +1,113 @@
+/* Estilos generales del header */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+header {
+    background-color: #14161A;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;   
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+/* Estilos del logo */
+.logo {
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    height: 50px;
+    margin-right: 12px;
+}
+
+/* Estilos del menú hamburguesa */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 2; /* Asegura que esté en la parte superior */
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: transform 0.4s ease;
+}
+
+/* Estilos de la navegación */
+.nav {
+    display: flex;
+    align-items: center;
+    z-index: 1; /* Asegura que esté detrás del menú hamburguesa */
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    text-transform: uppercase;
+}
+
+.nav li {
+    margin-right: 20px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.nav a:hover {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+
+/* Media query para hacer el menú hamburguesa visible en pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        margin-top: 4.4rem;
+        padding-top: 5rem;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(1, 4, 10, 0.9);
+        text-align: center;
+        transform: translateX(100%);
+        transition: transform 0.4s ease;
+        
+    }
+
+    .nav-list.active {
+        transform: translateX(0);
+    }
+
+    .nav-list li {
+        padding: 20px;
+        margin-right: 0;
+    }
+    .nav-list li:hover {        
+        background-color: black;
+    }
+}
